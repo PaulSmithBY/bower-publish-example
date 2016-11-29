@@ -1,0 +1,21 @@
+rootUrl: 'http://localhost:8080'
+gridUrl: 'http://this.address.is.ignored/so-anything-goes'
+tolerance: 3
+system:
+    plugins:
+        browserstack:
+            username: '111'
+            accessKey: '222'
+browsers:
+    ie11:
+        desiredCapabilities:
+            os: WINDOWS
+            os_version: '7'
+            browserName: 'internet explorer'
+            version: '11'
+    chrome43:
+        desiredCapabilities:
+            os: WINDOWS
+            os_version: '10'
+            browserName: chrome
+            version: '43'

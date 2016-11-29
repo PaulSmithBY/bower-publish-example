@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>ngn-element test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="../ngn-element.html">
+</head>
+<body>
+<script>
+    var start = performance.now();
+    var load, attached, result;
+    QUnit.module('Performance Tests');
+
+    HTMLImports.whenReady(function () {
+        load = performance.now() - start;
+    });
+    document.addEventListener('WebComponentsReady', function() {
+        attached = performance.now() - start;
+        result = {
+            testResult: {
+                loadTime: load,
+                attachedTime: attached
+            }
+        };
+        console.log(JSON.stringify(result));
+    });
+</script>
+<my-element></my-element>
+</body>
+</html>
